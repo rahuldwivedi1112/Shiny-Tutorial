@@ -1,0 +1,28 @@
+---
+title: "Seven Wonders of the World"
+author: "Rahul Dwivedi"
+date: "January 31, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Seven Wonders of the World
+
+This Map is created with leaflet package and shows the location of Seven Wonders of the Worlds
+
+```{r,echo= FALSE }
+library(leaflet)
+wonders <- data.frame(
+lat = c(20.963554, -22.951871, 41.890032,27.1750151,27.967539,30.321635,-13.163698),
+lng = c(-89.576877,-43.21118, 12.493899,78.0421552,107.724107,35.480125,-72.545981))
+wonders%>%
+leaflet() %>%
+addTiles() %>%
+addMarkers(popup = c("Chichen Itza","Christ the Redeemer","Piazza del Colosseo","Taj Mahal","Great Wall","Petra","Machu Picchu"))
+
+```
+
+
